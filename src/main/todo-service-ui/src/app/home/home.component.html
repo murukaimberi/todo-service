@@ -1,4 +1,39 @@
-<h1>Home</h1>
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <mat-card>
+        <mat-card-content>
+          <h4>Todo List</h4>
+          <hr />
+          <button class="mb-3" mat-raised-button>
+            <mat-icon>add</mat-icon>
+            Add todo
+          </button>
+          <div class="list-group">
+              <mat-selection-list [multiple]="false">
+                @for (todo of todos; track $index) {
+                  <mat-list-option [value]="todo">{{ todo.name }}</mat-list-option>
+                }
+              </mat-selection-list>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-md-8">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action mb-3" aria-current="true">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <button mat-mini-fab>
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <p class="mb-1">Some placeholder content in a paragraph.</p>
+          <small>And some small print.</small>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
